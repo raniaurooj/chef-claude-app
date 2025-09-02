@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  
+  html{
+    @apply box-border m-0 min-h-screen;
+  }
+  header i, h1{
+    @apply text-3xl;
+  }
+    h3{
+    @apply font-semibold text-xl;
+  }
+  header{
+    @apply flex justify-center items-center gap-4 bg-white h-[80px] shadow-md shadow-gray-300;
+  }
+  main{
+    @apply  md:px-[30px] py-[10px] xs:px-2;
+  }
+  form{
+    @apply flex justify-center gap-4 mb-4;
+  }
+  form input{
+    @apply border-[1px] border-gray-300 p-2 rounded-lg min-w-[150px] max-w-[400px] flex-grow-[1];
+  }
+  form button{
+    @apply bg-black text-white p-2 rounded-lg w-[150px] ;
+  }
+  form button::before{
+    content: "+";
+    margin-right: 5px;
+  } 
+  main section h1{
+    @apply mb-3;
+  }
+  #generate-recipe {
+    @apply px-4 mt-6 flex justify-evenly items-center gap-5 shadow-md h-[150px] bg-gray-300;
+  }
+  #generate-btn{
+    @apply bg-orange-700 py-2 px-4 rounded-md text-white shadow-md ;
+  }
+  #loader-section{
+    @apply h-full w-full fixed inset-0
+     bg-slate-600/60 flex items-center justify-center;
+  }
+  #loader{
+    @apply border-[5px] border-gray-700 border-l-transparent animate-spin
+    w-[40px] h-[40px] rounded-full;
+  }
+  #recipes{
+    @apply md:m-10 xs:m-2;
+  }
+  #recipe-section{
+    @apply p-4 border-[1px] border-gray-300 rounded-md mt-10 shadow-md;
+  }
+  #recipe-title{
+    @apply font-semibold text-2xl bg-gray-300 p-2;
+  }
+  #ingredients{
+    @apply mt-4 flex flex-col lg:flex-row justify-center items-center gap-10;
+  }
+ img{
+    @apply w-[30%] h-[30%] object-cover shadow-sm;
+  }
+  ul{
+    @apply list-disc list-inside p-2 md:text-lg;
+  }
+  #instructions{
+    @apply my-2;
+  }
+  #likes{
+    @apply text-red-600 flex flex-col justify-center items-center mt-1;
+  }
+
+}
