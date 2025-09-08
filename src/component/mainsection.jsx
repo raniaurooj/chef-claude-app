@@ -9,6 +9,13 @@ export default function MainSection() {
   const [recipes, setRecipes] = React.useState([]);
   const [isShown, setIsShown] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
+  const recipeSection = useRef(null)
+
+  useEffect(()=>{
+    if(recipes.length != 0  && recipeSection.current != null){
+       recipeSection.current.scrollIntoView({  behavior: "smooth" , block: "start"})
+      }
+  },[isShown])
 
   const handleOnSubmit = (formData) => {
     const newIngredient = formData.get("ingredient");
@@ -75,7 +82,7 @@ export default function MainSection() {
       </form>
 
       {allIngredients.length > 0 && (
-        <IngredientList getrecipe={getrecipe} allIngredients={allIngredients} />
+        <IngredientList getrecipe={getrecipe} allIngredients={allIngredients}   ref={recipeSection}/>
       )}
 
       {loading && (
